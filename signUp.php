@@ -64,6 +64,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MMA || Sign In & Sign Up</title>
+    <link rel="shortcut icon"
+        href="https://yt3.ggpht.com/K8-YocA-7arl_4uKY_3LP8S3hj4LgTMRwGit9yIPCdfW-fDPGNyCh3XrucxXbTMq9lE20DMJqg=s600-c-k-c0x00ffffff-no-rj-rp-mo"
+        type="image/x-icon">
     <!-- Get Bottstrap {css & js} -->
     <link rel="stylesheet" href="./Front-End/assets/bottstrap/css/bootstrap.min.css">
     <link rel="js" href="./Front-End/assets/bottstrap/js/bootstrap.min.js">

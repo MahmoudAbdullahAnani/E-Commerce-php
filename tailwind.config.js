@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require("tailwindcss/defaultTheme");
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
@@ -8,6 +9,9 @@ module.exports = {
     extend: {
       gridTemplateRows: {
         "[auto,auto,1fr]": "auto auto 1fr",
+      },
+      fontFamily: {
+        sans: ["Inter var", ...defaultTheme.fontFamily.sans],
       },
     },
   },
