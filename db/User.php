@@ -70,12 +70,15 @@ class User
     }
 
     // update
-    /*
-    UPDATE `product` 
-    SET `title`='[value-2]',`price`='[value-3]',`photo`='[value-4]',`discount`='[value-5]',`description`='[value-6]',`photoSize`='[value-7]',`full_path`='[value-8]',`tmp_name`='[value-9]' WHERE 1
-    */
     public function update($table,$title,$price,$photo,$discount,$description,$photoSize,$full_path,$tmp_name,$id){
         mysqli_query($this->conection,"UPDATE `$table` SET `title`='$title',`price`='$price',`photo`='$photo',`discount`='$discount',`description`='$description',`photoSize`='$photoSize',`full_path`='$full_path',`tmp_name`='$tmp_name' WHERE `Id` = $id");
+        return $this;
+    }
+    // update users
+    // UPDATE `user` SET `Full_Name`='[value-2]',`Age`='[value-3]',`Date`='[value-4]',`Password`='[value-5]',`Date_Create_Accont`='[value-6]',`User_Name`='[value-7]',`gmail`='[value-8]' WHERE 1
+    public function updateUser($table,$full_name,$age,$date,$gmail,$User_Name,$Password,$id){
+        // echo "UPDATE `$table` SET `Full_Name`='$full_name',`Age`='$age',`Date`='$date',`Password`='$Password',`User_Name`='$User_Name',`gmail`='$gmail' WHERE `Id` = $id";die;
+        mysqli_query($this->conection,"UPDATE `$table` SET `Full_Name`='$full_name',`Age`='$age',`Date`='$date',`Password`='$Password',`User_Name`='$User_Name',`gmail`='$gmail' WHERE `Id` = $id");
         return $this;
     }
 }

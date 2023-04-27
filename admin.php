@@ -23,7 +23,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
             $errors3 = 'the user is not found';
         }else{
             
-            $_SESSION['login'] = $userName;
+            $_SESSION['loginAdmin'] = $userName;
             sleep(1);
             header("Location: /E-Commerce/dashbourd.php");
             exit;
@@ -92,3 +92,4 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 </body>
 
 </html>
+<?php include_once "./Front-End/Footer.php"; ?>

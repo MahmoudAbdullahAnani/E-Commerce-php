@@ -8,7 +8,6 @@ include_once "./Front-End/Navbare.php";
 include_once "./db/User.php";
 $user = new User;
 $data = $user->select(' *','product')->print();
-// $user->select(' *','product')->print()
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,12 +15,94 @@ $data = $user->select(' *','product')->print();
 <head>
     <title>MMA || Home</title>
     <link rel="stylesheet" href="./Front-End/assets/Galry-css/style.css">
+    <style>
+    .me {
+        width: 400px;
+        margin: 90px auto;
+    }
+
+    .me p,
+    .me h1 {
+        letter-spacing: 3px;
+        text-align: center;
+    }
+
+    .me p {
+        font-weight: 200;
+    }
+
+    .me span {
+        font-weight: bold;
+    }
+
+    .social {
+        position: fixed;
+        top: 20px;
+    }
+
+    .social ul {
+        padding: 0px;
+        transform: translate(-270px, 0);
+    }
+
+    .social ul li {
+        display: block;
+        margin: 5px;
+        background: rgba(250, 250, 250, 0.50);
+        width: 300px;
+        text-align: right;
+        padding: 10px;
+        border-radius: 0 30px 30px 0;
+        transition: all 1s;
+    }
+
+    .social ul li:hover {
+        transform: translate(110px, 0);
+        background: rgba(0, 0, 0, 0.90);
+    }
+
+    .social ul li:hover a {
+        color: #000;
+    }
+
+    .social ul li:hover i {
+        color: #fff;
+        background: rgba(0, 0, 0, 0.36);
+        transform: rotate(360deg);
+        transition: all 1s;
+    }
+
+    .social ul li i {
+        margin-left: 10px;
+        color: #000;
+        background: #fff;
+        padding: 10px;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        font-size: 20px;
+        background: #ffffff;
+        transform: rotate(0deg);
+    }
+
+    </style>
 </head>
 
 <body>
+    <div class="social mt-20 z-40">
+        <ul>
+            <li><a style="  color: #fff;
+    text-decoration: none;" href="https://twitter.com/Mahmoud02136886">Twitter <i class="fa fa-twitter"></i></a></li>
+            <li><a style="  color: #fff;
+    text-decoration: none;" href="https://github.com/MahmoudAbdullahAnani">Github <i class="fa fa-github"></i></a></li>
+            <li><a style="  color: #fff;
+    text-decoration: none;" href="https://www.linkedin.com/in/mahmoud-abdullah-ab253920b/">Linkedin <i
+                        class="fa fa-linkedin"></i></a></li>
+        </ul>
+    </div>
     <main class="flex justify-center align-items-center relatives mainHome">
 
-        <video autoplay muted loop plays-inline class="videoGalry">
+        <video autoplay muted loop plays-inline class="videoGalry" style="width: 100%;">
             <source src="./Front-End/Images/Video/galry.mp4" type="video/mp4">
         </video>
 
@@ -123,3 +204,4 @@ elemantScroll.addEventListener('click', () => {
 </script>
 
 </html>
+<?php include_once "./Front-End/Footer.php"; ?>

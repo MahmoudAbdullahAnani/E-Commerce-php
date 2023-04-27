@@ -1,5 +1,5 @@
 <?php
-
+include_once "./db/User.php";
 
 $errors1 = '';
 $errors2 = '';
@@ -26,8 +26,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
         $errors5 = 'You must enter discount for the product';
     } else{
         $user = new User;
-        $notFound = $user->select(' *','product')->where('title','=',"$title")->orWhere('description','=',"$description")->print();
-        // print_r($notFound)  ;
+        $notFound = $user->select(' *','product')->where('title','=',"$title")->andWhere('description','=',"$description")->andWhere('price','=',"$price")->andWhere('discount','=',"$photoFile[size]")->andWhere('full_path','=',"$photoFile[size]")->andWhere('photoSize','=',"$photoFile[full_path]")->andWhere('tmp_name','=',"$photoFile[tmp_name]")->print();
         if (count($notFound)===0) { 
             move_uploaded_file($photoFile['tmp_name'],"./db/Images/".$photoFile['name']);
             $_POST['titleProduct']='';
@@ -35,7 +34,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
             $_POST['descriptionProduct']='';
             $_POST['discountProduct']='';
             // $table,$title,$price,$photo,$discount,$description,$photoSize,$full_path,$tmp_name,$id
-            $user->update(' product',$title,$price,$photoFile['name'],$discount,$description,$photoFile['size'],$photoFile['full_path'],$photoFile['tmp_name'],$_GET['update']);
+            $user->update('product',$title,$price,$photoFile['name'],$discount,$description,$photoFile['size'],$photoFile['full_path'],$photoFile['tmp_name'],$_GET['update']);
             sleep(1);
             header("location: /E-Commerce/dashbourd.php");
             exit;
@@ -44,10 +43,10 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
         }
     }
 }
-if(!isset($_GET['update'])){
-        header("location: /E-Commerce/home.php");
-    exit;
-} 
+// if(!isset($_GET['update'])){
+//         header("location: /E-Commerce/home.php");
+//     exit;
+// } 
 ?>
 
 <!DOCTYPE html>
@@ -84,14 +83,14 @@ if(!isset($_GET['update'])){
 
 <body>
     <div class=" pt-20 flex justify-center w-100">
-        <form action="./update.php" method="post" class="px-2 col-6" enctype="multipart/form-data">
+        <form
+            action="./update.php/?update=<?=$_GET['update'];?>&title=<?=$_GET['title']?>&description=<?=$_GET['description'];?>&price=<?=$_GET['price'];?>&discount=<?=$_GET['discount'];?>"
+            method="post" class="px-2 col-6" enctype="multipart/form-data">
             <h6 class="text-white bg-red-400 text-center mt-1 <?php $errors6&&"px-3 py-2" ?> rounded-lg px-3">
                 <?=$errors6?></h6>
             <div class="flex flex-col ">
                 <label for="titleProduct" class="fs-5  font-bold">Titel:</label>
-                <input type="text" value="<?php 
-                        echo $_GET['title'];
-                    ?>" name="titleProduct" id="titleProduct" placeholder="Text"
+                <input type="text" value="<?=$_GET['title']?>" name="titleProduct" id="titleProduct" placeholder="Text"
                     class="rounded-lg bg-slate-300 hover:bg-slate-200 focus:bg-slate-200">
                 <h6 class="text-white bg-red-400 text-center mt-1 <?php $errors1&&"px-3 py-2" ?> rounded-lg px-3">
                     <?=$errors1?></h6>

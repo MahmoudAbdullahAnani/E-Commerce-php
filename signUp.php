@@ -1,6 +1,10 @@
 <?php
 
-
+if (isset($_SESSION['login'])) {
+            sleep(1);
+            header("Location: /E-Commerce/home.php");
+            exit;
+}
 
 include_once "./db/User.php";
 date_default_timezone_set('Africa/Cairo');
