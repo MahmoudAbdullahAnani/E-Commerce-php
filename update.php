@@ -64,7 +64,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
     <link rel="stylesheet" href="./Front-End/assets/bottstrap/css/bootstrap.min.css">
     <link rel="js" href="./Front-End/assets/bottstrap/js/bootstrap.min.js">
     <!-- Get Taliwind -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./Front-End/assets/Tailwindcss/tailwindcss.min.js"></script>
     <script>
     tailwind.config = {
         theme: {

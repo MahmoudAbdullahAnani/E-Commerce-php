@@ -3,7 +3,7 @@
 session_start();
 
 if (!isset($_SESSION['loginAdmin'])) {
-    header("Location: /E-Commerce/admin.php");
+    header("Location: http://mma1.eb2a.com/admin.php");
     exit;
 }
 
@@ -26,7 +26,7 @@ if (isset($_GET['delete'])) {
     $user->delete($_GET['delete']);
     unlink("./db/Images/$_GET[photo]");
                 sleep(1);
-            header("location: /E-Commerce/dashbourd.php");
+            header("location: http://mma1.eb2a.com/dashbourd.php");
             exit;
 }
 
@@ -60,7 +60,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
             $_POST['discountProduct']='';
             $user->insertProduct('product', $title, $price, $photoFile['name'],$photoFile['size'],$photoFile['full_path'],$photoFile['tmp_name'], $discount, $description);
             sleep(1);
-            header("location: /E-Commerce/dashbourd.php");
+            header("location: http://mma1.eb2a.com/dashbourd.php");
             exit;
         }else{
             $errors6 = 'This user already exists';
@@ -85,7 +85,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
     <link rel="stylesheet" href="./Front-End/assets/bottstrap/css/bootstrap.min.css">
     <link rel="js" href="./Front-End/assets/bottstrap/js/bootstrap.min.js">
     <!-- Get Taliwind -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./Front-End/assets/Tailwindcss/tailwindcss.min.js"></script>
     <script>
     tailwind.config = {
         theme: {
@@ -134,7 +134,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
                     </div>
                     <div class="hidden sm:ml-6 sm:block">
                         <div class="flex space-x-4">
-                            <a href="/E-Commerce/home.php"
+                            <a href="http://mma1.eb2a.com/home.php"
                                 class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
                                 aria-current="page">Home</a>
                             <a href="#"
@@ -160,7 +160,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
                     <!-- Profile dropdown -->
                     <div class="relative ml-3">
                         <div>
-                            <a href="/E-Commerce/account-settings.php"
+                            <a href="http://mma1.eb2a.com/account-settings.php"
                                 class="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                                 id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                                 <span class="sr-only">Open user menu</span>
@@ -169,31 +169,10 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
                                     alt="">
                             </a>
                         </div>
-                        <!-- <div class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
-                            role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
-                                id="user-menu-item-0">Your Profile</a>
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
-                                id="user-menu-item-1">Settings</a>
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1"
-                                id="user-menu-item-2">Sign out</a>
-                        </div> -->
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- Mobile menu, show/hide based on menu state. -->
-        <!-- <div class="sm:hidden" id="mobile-menu">
-            <div class="space-y-1 px-2 pb-3 pt-2">
-                <a href="#" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium"
-                    aria-current="page">Dashboard</a>
-                <a href="#"
-                    class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Projects</a>
-                <a href="#"
-                    class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Calendar</a>
-            </div>
-        </div> -->
     </nav>
     <div class=" pt-20 flex justify-center w-100">
         <form action="./dashbourd.php" method="post" class="px-2 col-6" enctype="multipart/form-data">
@@ -286,9 +265,9 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
                     <td class="text-nowrap "><img width='120' class="rounded-lg"
                             src="./db/Images/<?=$product['photo']?>" alt="savc"></td>
                     <td class="text-nowrap ">
-                        <a href="/E-Commerce/update.php/?update=<?=$product['Id']?>&title=<?=$product['title']?>&description=<?=$product['description']?>&price=<?=$product['price']?>&discount=<?=$product['discount']?>"
+                        <a href="http://mma1.eb2a.com/update.php/?update=<?=$product['id']?>&title=<?=$product['title']?>&description=<?=$product['description']?>&price=<?=$product['price']?>&discount=<?=$product['discount']?>"
                             class="bg-green-200 hover:bg-green-300 m-1 btn">Update</a>
-                        <a href="/E-Commerce/dashbourd.php/?delete=<?=$product['Id']?>&photo=<?=$product['photo']?>"
+                        <a href="http://mma1.eb2a.com/dashbourd.php/?delete=<?=$product['id']?>&photo=<?=$product['photo']?>"
                             class="bg-red-200 hover:bg-red-300 btn">Delete</a>
                     </td>
                 </tr>

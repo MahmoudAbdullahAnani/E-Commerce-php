@@ -13,6 +13,8 @@ $errors4 ='';
 $errors5 ='';
 $errors6 ='';
 $errors7 ='';
+$errors8 ='';
+// validityNumber
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $fullName = $_POST['fullName'];
     $age = $_POST['age'];
@@ -20,6 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'];
     $userName = $_POST['userName'];
     $gmail = $_POST['gmail'];
+    $validityNumber = $_POST['validityNumber'];
     if (!$fullName && !$age && !$date && !$userName && !$password) {
         $errors1 = 'Data must be filled';
     }elseif(!$fullName ){
@@ -36,6 +39,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors6 ='You must enter a password';
     } elseif(strlen($password)<3 ){
         $errors6 ='The password is weak';
+    } elseif($validityNumber !== "mahmoud123456"){
+        $errors8 ='Sorry, the validity number is incorrect';
     } else {
         $user = new User;
         $notFound = $user->select(' *','admin')->where('User_Name','=',"$userName")->andWhere('Password','=',"$password")->print();
@@ -72,14 +77,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="./Front-End/assets/bottstrap/css/bootstrap.min.css">
     <link rel="js" href="./Front-End/assets/bottstrap/js/bootstrap.min.js">
     <!-- Get Taliwind -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./Front-End/assets/Tailwindcss/tailwindcss.min.js"></script>
     <!-- Get FontAwesome -->
     <link rel="stylesheet" href="./Front-End/assets/fontawesome-free-6.1.1-web/all.min.js">
 </head>
 
 <body>
     <main class="d-flex justify-content-center align-items-center" style="height: 100vh;">
-        <div class=" border p-5 rounded-lg col-12 col-sm-6 col-md-4">
+        <div class=" border p-3 rounded-lg col-12 col-sm-6 col-md-4">
             <img class="w-20 mx-auto" src="./Front-End/Images/signUp-accont.jpg" alt="avatar">
             <form action="./create-admin.php" method="post" enctype="multipart/form-data">
                 <h6 class="text-white bg-red-400 text-center mt-1 <?php $errors1&&"px-3 py-2" ?> rounded-lg px-3">
@@ -131,6 +136,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     }?>" class="border rounded px-2 py-1" name="password" id="password">
                     <h6 class="text-white bg-red-400 text-center mt-1 <?php $errors6&&"px-3 py-2" ?> rounded-lg px-3">
                         <?=$errors6?></h6>
+                </div>
+                <div class="d-flex flex-column ">
+                    <label for="validityNumber">Validity number:</label>
+                    <input type="password" class="border rounded px-2 py-1" name="validityNumber" id="validityNumber">
+                    <h6 class="text-white bg-red-400 text-center mt-1 <?php $errors8&&"px-3 py-2" ?> rounded-lg px-3">
+                        <?=$errors8?></h6>
                 </div>
                 <div class="text-center"> <button type="submit"
                         class="rounded-full text-center bg-green-300 hover:bg-green-400  hover:text-white  px-5 py-1 my-2 mx-auto ">Create

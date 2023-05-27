@@ -47,7 +47,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     <link rel="stylesheet" href="./Front-End/assets/bottstrap/css/bootstrap.min.css">
     <link rel="js" href="./Front-End/assets/bottstrap/js/bootstrap.min.js">
     <!-- Get Taliwind -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./Front-End/assets/Tailwindcss/tailwindcss.min.js"></script>
     <!-- Get FontAwesome -->
     <link rel="stylesheet" href="./Front-End/assets/fontawesome-free-6.1.1-web/all.min.js">
 </head>

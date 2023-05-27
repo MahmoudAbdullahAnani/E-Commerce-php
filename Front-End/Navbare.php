@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="./Front-End/assets/bottstrap/css/bootstrap.min.css">
     <link rel="js" href="./Front-End/assets/bottstrap/js/bootstrap.min.js">
     <!-- Get Taliwind -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script src="./assets/Tailwindcss/tailwindcss.min.js"></script> -->
     <script>
     tailwind.config = {
         theme: {
@@ -63,7 +63,7 @@
                     </div>
                     <div class="hidden sm:ml-6 sm:block">
                         <div class="flex space-x-4">
-                            <a href="/E-Commerce/home.php"
+                            <a href="http://mma1.eb2a.com/home.php"
                                 class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
                                 aria-current="page">Home</a>
                             <a href="#"
@@ -89,13 +89,13 @@
                     <!-- Profile dropdown -->
                     <div class="relative ml-3">
                         <div>
-                            <a href="/E-Commerce/account-settings.php"
+                            <a href="http://mma1.eb2a.com/account-settings.php"
                                 class="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                                 id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                                 <span class="sr-only">Open user menu</span>
-                                <img class="h-8 w-8 rounded-full"
+                                <!-- <img class="h-8 w-8 rounded-full"
                                     src="https://w7.pngwing.com/pngs/535/466/png-transparent-google-account-microsoft-account-login-email-gmail-email-miscellaneous-text-trademark-thumbnail.png"
-                                    alt="">
+                                    alt=""> -->
                             </a>
                         </div>
                         <!-- <div class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"

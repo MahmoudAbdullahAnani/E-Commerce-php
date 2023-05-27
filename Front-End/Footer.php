@@ -36,10 +36,10 @@
                 <div class="col-6 col-lg-2 offset-lg-1 mb-3">
                     <h4 class="fs-4">Links</h4>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a href="/E-Commerce/home.php">Home</a></li>
-                        <li class="mb-2"><a href="/E-Commerce/home.php">Products</a></li>
-                        <li class="mb-2"><a href="/E-Commerce/index.php">Sign In</a></li>
-                        <li class="mb-2"><a href="/E-Commerce/signUp.php">Sign Up</a></li>
+                        <li class="mb-2"><a href="http://mma1.eb2a.com/home.php">Home</a></li>
+                        <li class="mb-2"><a href="http://mma1.eb2a.com/home.php">Products</a></li>
+                        <li class="mb-2"><a href="http://mma1.eb2a.com/index.php">Sign In</a></li>
+                        <li class="mb-2"><a href="http://mma1.eb2a.com/signUp.php">Sign Up</a></li>
                     </ul>
                 </div>
                 <div class="col-6 col-lg-2 mb-3">
