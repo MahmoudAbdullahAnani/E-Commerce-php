@@ -11,7 +11,7 @@
     <li>Home Page [ View Products ].</li>
     <li>CRUD Operations.</li>
 </ul>
-<img src="./Design/77169-buy-and-sell-online.gif" width="1000px" alt="e-commerce-gif">
+<img src="./Design/77169-buy-and-sell-online.gif" width="500px" alt="e-commerce-gif">
 <h1>software used</h1>
 <ul>
     <li>php.</li>
