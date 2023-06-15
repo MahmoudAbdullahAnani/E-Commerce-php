@@ -2,8 +2,7 @@
 <h1>MMA</h1>
 <h6>It is an application that manages the products of a commercial store that publishes its products electronically with some other powerful features.</h6>
 <hr />
-<h5>Live Dome:</h5>
-  http://mma1.eb2a.com/
+<a href="http://mma1.eb2a.com/" >Live Dome</a>
 <h1>Application features✨✨:</h1>
 <ul>
     <li>Sign In & Sign Up.</li>
