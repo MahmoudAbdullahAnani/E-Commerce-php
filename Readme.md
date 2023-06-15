@@ -1,4 +1,3 @@
-<img src="http://mma1.eb2a.com/Front-End/Images/vector-login.jpg" alt="MMA" width="30%" />
 <h1>MMA</h1>
 <h6>It is an application that manages the products of a commercial store that publishes its products electronically with some other powerful features.</h6>
 <hr />
@@ -14,7 +13,7 @@
 </ul>
 <img src="./Design/77169-buy-and-sell-online.gif" width="250px" alt="e-commerce-gif">
 <img src="./Design/66631-ecommerce.gif" width="250px" alt="e-commerce-gif">
-<h1>software used</h1>
+<h1>software used:</h1>
 <ul>
     <li>php.</li>
     <li>js.</li>
